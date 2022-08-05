@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 import * as BiIcons from "react-icons/bi";
 import * as IoIcons from "react-icons/io";
+import * as LoIcons from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import img1 from "../../assets/ete2.jpeg";
 import img2 from "../../assets/ete4.jpeg";
@@ -14,10 +16,12 @@ import videoBg from "../../assets/viveo.mp4";
 import "./Landing.css";
 
 const Start = () => {
-  const [language, setLanguage] = useState("English");
   const [canShow, setCanShow] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const [swap, setSwap] = useState(false);
+  const [showSearch, setShowSearch] = useState(true);
+
+  const nav = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,20 +29,13 @@ const Start = () => {
     }, 10000);
   });
 
-  const handleSelectLanguage = (e) => {
-    setLanguage(e.target.innerText);
-    alert("Are you sure you want to change lagnuage?");
-    localStorage.setItem("Languages", JSON.stringify(e.target.innerText));
-    setCanShow((value) => !value);
-  };
-
   const ref = useRef(null);
 
   useEffect(() => {
     const el2 = ref.current;
 
     const menuToggle = document.querySelector(".menu-bars");
-    const showCase = document.querySelector(".body");
+    const showCase = document.querySelector(".menu");
 
     menuToggle.addEventListener("click", () => {
       showCase.classList.toggle(
@@ -55,6 +52,16 @@ const Start = () => {
         counter = 1;
       }
     }, 10000);
+
+    const showSearch = document.querySelector(".search-icon");
+    const searchInput = document.querySelector(".search");
+
+    showSearch.addEventListener("click", () => {
+      searchInput.classList.toggle(
+        "active",
+        setShowSearch((value) => !value)
+      );
+    });
   }, []);
 
   return (
@@ -65,97 +72,47 @@ const Start = () => {
             <img src={logo} alt="" />
           </div>
           <div className="top-right">
-            <div className="language-container">
-              <span>{language}</span>
-              {canShow ? (
-                <div>
-                  <IoIcons.IoMdArrowDropup
-                    onClick={() => setCanShow(!canShow)}
-                    className="drop-down-icon"
-                  />
-                </div>
+            <div className="search" ref={ref}>
+              <input type="text" name="search" />
+            </div>
+            <div className="search-icon">
+              {showSearch ? (
+                <LoIcons.IoSearchCircleOutline id="search" ref={ref} />
               ) : (
-                <div>
-                  <IoIcons.IoMdArrowDropdown
-                    onClick={() => setCanShow(!canShow)}
-                    className="drop-down-icon"
-                  />
-                </div>
+                <FaIcons.FaRegTimesCircle id="close" />
               )}
             </div>
-            {canShow && (
-              <div className="languages">
-                <span onClick={handleSelectLanguage}>English</span>
-                <span onClick={handleSelectLanguage}>French</span>
-                <span onClick={handleSelectLanguage}>Ikinyarwanda</span>
-              </div>
-            )}
+            {/* <div className="menu-bars" ref={ref}>
+              <AiIcons.AiOutlineMenu id="open-menu" />
+            </div> */}
             {isOpen ? (
               <div className="menu-bars" ref={ref}>
-                <AiIcons.AiOutlineMenu />
+                <AiIcons.AiOutlineMenu id="open-menu" />
               </div>
             ) : (
               <div className="menu-bars" ref={ref}>
-                <IoIcons.IoMdClose />
+                <IoIcons.IoMdClose id="close-menu" />
               </div>
             )}
           </div>
         </section>
         <video src={videoBg} autoPlay loop muted />
-        <div className="overlay"></div>
+        {/* <div className="overlay"></div> */}
         <section className="content">
-          {(() => {
-            if (language === "English") {
-              return (
-                <div className="text">
-                  <h1>WELCOME TO NEW DAY</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corporis facere repellendus ducimus laboriosam assumenda
-                    molestias dolor nulla quo, maxime deleniti. Fugiat, illum.
-                    Beatae est amet ullam consectetur accusantium aspernatur
-                    pariatur?
-                  </p>
-                  <div className="btn">
-                    <button>Start</button>
-                    <button id="login">Login</button>
-                  </div>
-                </div>
-              );
-            } else if (language === "French") {
-              return (
-                <div className="text">
-                  <h1>BIENVENUE SUR NEW DAY</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corporis facere repellendus ducimus laboriosam assumenda
-                    molestias dolor nulla quo, maxime deleniti. Fugiat, illum.
-                    Beatae est amet ullam consectetur accusantium aspernatur
-                    pariatur?
-                  </p>
-                  <div className="btn">
-                    <button>COMMENCEZ</button>
-                  </div>
-                </div>
-              );
-            } else if (language === "Ikinyarwanda") {
-              return (
-                <div className="text">
-                  <h1>IKAZE KURI NEW DAY</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corporis facere repellendus ducimus laboriosam assumenda
-                    molestias dolor nulla quo, maxime deleniti. Fugiat, illum.
-                    Beatae est amet ullam consectetur accusantium aspernatur
-                    pariatur?
-                  </p>
-                  <div className="btn">
-                    <button>TANGIRA</button>
-                  </div>
-                </div>
-              );
-            }
-          })()}
+          {" "}
+          <div className="text">
+            <h1>WELCOME TO NEW DAY</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              facere repellendus ducimus laboriosam assumenda molestias dolor
+              nulla quo, maxime deleniti. Fugiat, illum. Beatae est amet ullam
+              consectetur accusantium aspernatur pariatur?
+            </p>
+            <div className="btn">
+              <button>Start</button>
+              <button id="login">Login</button>
+            </div>
+          </div>
           {(() => {})()}
           <div className="images">
             <div className="section">
@@ -201,19 +158,15 @@ const Start = () => {
               </div>
             </div>
           </div>
-
           <div className="section-30">
             {swap ? (
-              <p ref={ref}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              </p>
+              <p ref={ref}>Shop electronic devices and clothes online.</p>
             ) : (
-              <p ref={ref}>
-                Quas quo eum corporis perferendis. Voluptas animi porro ad.{" "}
-              </p>
+              <p ref={ref}>Get a fast and safe service with us. </p>
             )}
+            {/* <p ref={ref}>Shop electronic devices and clothes online.</p>{" "}
+            <p ref={ref}>Get a fast and safe service with us. </p> */}
           </div>
-
           <div className="footer-icon">
             <div>
               <FaIcons.FaFacebook id="fb-icon" />
@@ -233,17 +186,17 @@ const Start = () => {
 
       <div className="section-33">
         {swap ? (
-          <p ref={ref}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </p>
+          <p ref={ref}>Shop electronic devices and clothes online.</p>
         ) : (
-          <p ref={ref}>
-            Quas quo eum corporis perferendis. Voluptas animi porro ad.{" "}
-          </p>
+          <p ref={ref}>Get a fast and safe service with us. </p>
         )}
       </div>
 
-      <div className="menu">
+      <div className="menu" ref={ref}>
+        {/* <div className="menu-bars" ref={ref}>
+          <IoIcons.IoMdClose />
+        </div> */}
+
         <div className="sub-menu">
           <FaIcons.FaHome />
           <span>Home</span>
