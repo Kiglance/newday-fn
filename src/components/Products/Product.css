@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500;700&family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #fffae7;
+  /* z-index: 100; */
+  /* position: absolute; */
+}
+/* 
+.container {
+  width: 100vw;
+  height: auto;
+  padding: 0 30px 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+/* 
+#images {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+#images img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.box {
+  width: 20%;
+  height: fit-content;
+  max-height: min-content;
+  box-sizing: border-box;
+  box-shadow: 2px 3px 3px #b3b3b3;
+  margin: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.box:hover {
+  box-shadow: 2px 3px 4px 2px #b3b3b3;
+}
+#content {
+  display: block;
+  margin: auto;
+  width: 90%;
+  padding: 20px 5px;
+}
+#productName {
+  display: inline-block;
+  text-transform: uppercase;
+}
+#date {
+  font-size: 16px;
+  color: rgb(0, 126, 19);
+  margin: 20px 0;
+}
+
+#date span {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin: 20px 0;
+} */
+
+/* table,
+th,
+td {
+  vertical-align: top;
+  border: 1px solid #008080;
+} */
+table {
+  display: block;
+  width: 80vw;
+  margin: 0 auto;
+  background-color: #fff;
+  border-collapse: collapse;
+  /* position: relative; */
+}
+thead {
+  color: aliceblue;
+  background-color: #008080;
+  padding: 20px;
+  width: 100%;
+}
+tbody tr {
+  max-height: 220px;
+  /* display: none; */
+}
+th {
+  padding: 20px;
+  text-transform: uppercase;
+  max-height: 220px;
+}
+td {
+  position: relative;
+  padding: 20px;
+  max-height: 220px;
+}
+td span {
+  margin: 30px 0;
+  display: block;
+  font-size: 16px;
+  color: #008080;
+}
+tbody tr:nth-child(even) {
+  background-color: rgb(235, 235, 235);
+}
+tbody tr:nth-child(odd) {
+  background-color: rgb(255, 255, 255);
+}
+
+.nbrs {
+  width: 25%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.nbrs button {
+  padding: 3px 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+.nbrs button:hover {
+  padding: 3px 5px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid #5c5c5c;
+  border-radius: 3px;
+}
+.arrow_icons {
+  color: #008080;
+  font-size: 40px;
+  cursor: pointer;
+}
+.no_pdts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no_pdts h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Crimson Pro", serif;
+}

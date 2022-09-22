@@ -12,7 +12,7 @@ import img2 from "../../assets/ete4.jpeg";
 import img3 from "../../assets/clothes1.webp";
 import img4 from "../../assets/clothes.jpeg";
 import img5 from "../../assets/shoes3.jpeg";
-import videoBg from "../../assets/viveo.mp4";
+import videoBg from "../../assets/viva.mp4";
 import "./Landing.css";
 
 const Start = () => {
@@ -22,6 +22,10 @@ const Start = () => {
   const [showSearch, setShowSearch] = useState(true);
 
   const nav = useNavigate();
+
+  const toHome = () => {
+    nav("/home");
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -67,7 +71,7 @@ const Start = () => {
   return (
     <>
       <div className="body" ref={ref}>
-        <section className="header">
+        <section className="headers">
           <div className="logo">
             <img src={logo} alt="" />
           </div>
@@ -116,27 +120,27 @@ const Start = () => {
           {(() => {})()}
           <div className="images">
             <div className="section">
-              <div className="slider">
-                <div className="slides">
+              <div className="heror">
+                <div className="heros">
                   <input type="radio" name="radio-btn" id="radio1" ref={ref} />
                   <input type="radio" name="radio-btn" id="radio2" ref={ref} />
                   <input type="radio" name="radio-btn" id="radio3" ref={ref} />
                   <input type="radio" name="radio-btn" id="radio4" ref={ref} />
                   <input type="radio" name="radio-btn" id="radio5" ref={ref} />
 
-                  <div className="slide first">
+                  <div className="hero first">
                     <img src={img1} alt="" />
                   </div>
-                  <div className="slide">
+                  <div className="hero">
                     <img src={img2} alt="" />
                   </div>
-                  <div className="slide">
+                  <div className="hero">
                     <img src={img3} alt="" />
                   </div>
-                  <div className="slide">
+                  <div className="hero">
                     <img src={img4} alt="" />
                   </div>
-                  <div className="slide">
+                  <div className="hero">
                     <img src={img5} alt="" />
                   </div>
                   <div className="navigation-auto">
@@ -159,45 +163,43 @@ const Start = () => {
             </div>
           </div>
           <div className="section-30">
-            {swap ? (
-              <p ref={ref}>Shop electronic devices and clothes online.</p>
-            ) : (
-              <p ref={ref}>Get a fast and safe service with us. </p>
-            )}
-            {/* <p ref={ref}>Shop electronic devices and clothes online.</p>{" "}
-            <p ref={ref}>Get a fast and safe service with us. </p> */}
+            <marquee>
+              Shop electronic devices and clothes online Get a fast and safe
+              service with us.
+            </marquee>
           </div>
           <div className="footer-icon">
             <div>
-              <FaIcons.FaFacebook id="fb-icon" />
+              <FaIcons.FaFacebook id="fb-icon" style={{ fontSize: "30px" }} />
             </div>
             <div>
-              <BsIcons.BsTwitter id="tw-icon" />
+              <BsIcons.BsTwitter id="tw-icon" style={{ fontSize: "30px" }} />
             </div>
             <div>
-              <AiIcons.AiFillLinkedin id="li-icon" />
+              <AiIcons.AiFillLinkedin
+                id="li-icon"
+                style={{ fontSize: "30px" }}
+              />
             </div>
             <div>
-              <BsIcons.BsInstagram id="insta-icon" />
+              <BsIcons.BsInstagram
+                id="insta-icon"
+                style={{ fontSize: "30px" }}
+              />
             </div>
           </div>
         </section>
       </div>
 
       <div className="section-33">
-        {swap ? (
-          <p ref={ref}>Shop electronic devices and clothes online.</p>
-        ) : (
-          <p ref={ref}>Get a fast and safe service with us. </p>
-        )}
+        <marquee>
+          Shop electronic devices and clothes online. Get a fast and safe
+          service with us.
+        </marquee>
       </div>
 
       <div className="menu" ref={ref}>
-        {/* <div className="menu-bars" ref={ref}>
-          <IoIcons.IoMdClose />
-        </div> */}
-
-        <div className="sub-menu">
+        <div className="sub-menu" onClick={toHome}>
           <FaIcons.FaHome />
           <span>Home</span>
         </div>

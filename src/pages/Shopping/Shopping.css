@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500;700&family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.shop_body {
+  background-color: #f8f8ff;
+  overflow: hidden;
+}
+
+.side_container {
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 100px;
+  bottom: 0;
+  z-index: 100;
+  border-right: 1px solid #000;
+  height: 80%;
+  overflow: scroll;
+}
+.side_container ul li {
+  margin: 30px;
+  list-style: none;
+}
+.middle_container {
+  width: 80%;
+  height: fit-content;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  left: 25%;
+  top: 50px;
+  padding-bottom: 100px;
+}
+
+.container_box {
+  width: 100%;
+  padding-left: 200px;
+  height: fit-content;
+  padding: 0 30px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.box {
+  margin: 20px 10px 40px;
+  display: block;
+  width: min-content;
+}
+.shop_images img {
+  width: 300px;
+  height: 300px;
+}
+.shop_btn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  padding: 7px 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.shop_btn:hover {
+  background-color: #008080;
+  color: #ffffff;
+  border: none;
+}
+.shop_btn span {
+  margin: 4px 5px 0 0;
+}
+.name_price h1 {
+  text-align: center;
+}
+.name_price > p,
+.name_price > p > span {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+.sorted_prices > div > ul {
+  display: block;
+}
+
+.sorted_prices > div > ul > li {
+  cursor: pointer;
+}
+.sorted_prices > div > ul > li:hover {
+  color: #008080;
+  font-weight: 600;
+}
+.sorted_data {
+  width: max-content;
+  padding: 10px 0;
+}
+.sorted_data > div > ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sorted_data > div > ul > li {
+  color: #000000;
+  position: relative;
+  width: fit-content;
+  left: 0;
+  cursor: pointer;
+}
+.sorted_data > div > ul > li:hover {
+  color: #008080;
+  font-weight: 600;
+}
+.down_arrow_icons {
+  margin: 0 20px;
+}
+
+.searchInputs {
+  margin-top: 105px;
+  display: flex;
+}
+
+.search input {
+  background-color: white;
+  border: 0;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+  width: 300px;
+}
+
+.searchIcon {
+  height: 60px;
+  width: 50px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+input:focus {
+  outline: none;
+}
+.searchIcon {
+  font-size: 20px;
+  background: none;
+  cursor: pointer;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+}
+
+.dataItem p {
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: #008080a5;
+}
+
+#clearBtn {
+  cursor: pointer;
+}

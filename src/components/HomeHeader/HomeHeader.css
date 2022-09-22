@@ -1,0 +1,50 @@
+.header_container {
+  height: 50px;
+}
+.header {
+  display: flex;
+  color: #fff;
+  position: fixed;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.header_icons {
+  font-size: 20px;
+  margin: 0 15px;
+}
+.nav_1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#logo {
+  margin-left: 30px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.nav_1 ul {
+  display: flex;
+}
+
+.nav_1 ul li {
+  display: flex;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.header.active {
+  background-color: rgba(132, 132, 132, 0.6);
+}
+
+.nav_1 ul li:hover {
+  color: #008080;
+}
+
+.nav_2 span {
+  cursor: pointer;
+}
