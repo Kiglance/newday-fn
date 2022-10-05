@@ -21,7 +21,7 @@ const Arrays = () => {
 
   const smthg = spltt.split("p")[0];
 
-  console.log(smthg);
+  // console.log(smthg);
 
   const sortedData = products.sort((a, b) => {
     if (parseInt(a.size.split("p")[0]) > parseInt(b.size.split("p")[0])) {
@@ -37,7 +37,7 @@ const Arrays = () => {
 
   const vvc = products.filter((values) => values.price > 1000);
 
-  console.log(vvc);
+  // console.log(vvc);
 
   return (
     <div>

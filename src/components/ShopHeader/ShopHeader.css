@@ -3,13 +3,13 @@
 }
 .shop_header {
   display: flex;
-  /* color: #fff; */
+  color: #ffffff;
   position: fixed;
   width: 100vw;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background-color: #f8f8ff;
+  background-color: #008080;
   border-bottom: 1px solid #333;
 }
 .shop_header_icons {
@@ -24,9 +24,10 @@
 
 #logo {
   margin-left: 30px;
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 80px;
   cursor: pointer;
+  color: #fff;
 }
 
 .shop_nav_1 ul {

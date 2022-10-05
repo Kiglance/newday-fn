@@ -174,7 +174,6 @@ const Shopping = () => {
   return (
     <div className="shop_body">
       <ShopHeader />
-
       <div className="side_container">
         <ul>
           <li>
@@ -246,7 +245,7 @@ const Shopping = () => {
           </li>
         </ul>
       </div>
-
+      {/* // (*************************************************)// */}
       <div className="middle_container">
         <input
           type="text"

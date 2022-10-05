@@ -4,6 +4,8 @@ import Home from "./pages/Home/Home";
 import Shopping from "./pages/Shopping/Shopping";
 import Header from "./components/Headers/Header";
 import Arrays from "./components/Headers/Arrays/Arrays";
+import Shop from "./pages/shop/Shop";
+import ShopOne from "./pages/shop/ShopOne";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
       <Route path="/home/" element={<Home />} exact={true} />
       <Route path="/start_shopping/" element={<Shopping />} exact={true} />
       <Route path="/dev/" element={<Header />} exact={true} />
-      <Route path="/arr/" element={<Arrays />} exact={true} />
+      <Route path="/arr/" element={<Shop />} exact={true} />
+      <Route path="/arr_one/" element={<ShopOne />} exact={true} />
     </Routes>
   );
 }

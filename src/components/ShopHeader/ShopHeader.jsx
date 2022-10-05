@@ -4,7 +4,7 @@ import * as BiIcons from "react-icons/bi";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 // import logo from "../../
-import logo from "../../assets/wordgr.png";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import "./ShopHeader.css";
 

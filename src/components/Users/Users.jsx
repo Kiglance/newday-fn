@@ -23,7 +23,7 @@ const Users = () => {
             {user.firstName} {user.lastName}
           </li>
           <li>{user.email}</li>
-          <li>{user.Profiles.phoneNumber}</li>
+          {/* <li>{user.Profiles.phoneNumber}</li> */}
           <li></li>
         </ul>
       ))}
