@@ -1,4 +1,5 @@
 export const GET_PRODUCTS = "GET_PRODUCTS";
+export const POST_PRODUCT = "POST_PRODUCT";
 export const GET_ONE_PRODUCT = "GET_ONE_PRODUCT";
 export const GET_CATEGORIES = "GET_CATEGORIES";
 export const GET_ONE_CATEGORY = "GET_ONE_CATEGORY";
@@ -7,3 +8,7 @@ export const GET_ONE_CLASS = "GET_ONE_CLASS";
 export const GET_CATEGORY_CLASSES = "GET_CATEGORY_CLASSES";
 export const GET_CLASSES_OF_CATEGORY = "GET_CLASSES_OF_CATEGORY";
 export const GET_PRODUCTS_OF_CLASS = "GET_PRODUCTS_OF_CLASS";
+export const GET_USERS = "GET_USERS";
+export const GET_ONE_USER = "GET_ONE_USER";
+export const POST_USER = "POST_USER";
+export const LOGIN_USER = "LOGIN_USER";

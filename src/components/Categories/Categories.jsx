@@ -95,7 +95,10 @@ const Categories = (props) => {
               <div className="dataResult">
                 {categoriesWithClasses?.map((value) => {
                   return (
-                    <a href={`/category/${value.categoryId}`}>
+                    <a
+                      href={`/category/${value.categoryId}`}
+                      style={{ color: "#333" }}
+                    >
                       <div
                         className="dataItem"
                         key={value.categoryId}
@@ -142,7 +145,10 @@ const Categories = (props) => {
             <div className="dataResult">
               {filteredData.map((value) => {
                 return (
-                  <a href={`/product/${value.productId}`}>
+                  <a
+                    href={`/product/${value.productId}`}
+                    style={{ color: "#333" }}
+                  >
                     <div className="dataItem" key={value.productId}>
                       <p id={value.productId}>{value.productName}</p>
                     </div>

@@ -80,16 +80,16 @@ const OneCategory = (props) => {
                   }}
                 >
                   <img
-                    src={img1}
+                    src={values.coverImage}
                     alt=""
                     style={{
                       width: "200px",
                       height: "250px",
                       border: "1px solid #979797",
+                      // filter: "contrast(180%)",
                     }}
                   />
-
-                  <h1
+                  <div
                     id={values.classId}
                     style={{
                       zIndex: "1",
@@ -98,14 +98,23 @@ const OneCategory = (props) => {
                       left: "50%",
                       transform: "translate(-50%, -50%)",
                       width: "100%",
-                      background: "#979797ca",
+                      height: "100%",
+                      background: "#0000007c",
                       padding: "20px 0",
                       cursor: "pointer",
-                      fontWeight: "600",
                     }}
                   >
-                    {values.className}
-                  </h1>
+                    <h1
+                      style={{
+                        marginTop: "80px",
+                        fontSize: "25px",
+                        fontWeight: "600",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {values.className}
+                    </h1>
+                  </div>
                 </div>
               </a>
             );

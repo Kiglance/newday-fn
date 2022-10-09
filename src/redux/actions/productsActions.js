@@ -1,5 +1,6 @@
 import creator from "./creator";
-import { GET_PRODUCTS, GET_ONE_PRODUCT } from "..";
+import { GET_PRODUCTS, GET_ONE_PRODUCT, POST_PRODUCT } from "..";
+import { toast } from "react-toastify";
 
 export const getAllProducts = () => async (dispatch) => {
   try {
@@ -34,7 +35,23 @@ export const getSearchedProducts = (searchedInput) => async (dispatch) => {
     });
     dispatch(creator(GET_PRODUCTS, searchData));
   } catch (error) {
-    // console.log(error);
+    return console.log(error);
+  }
+};
+
+export const createProduct = (data) => async (dispatch) => {
+  try {
+    const dt = await fetch(`http://localhost:4040/api/v2/products/`, {
+      method: "POST",
+      body: data,
+      mode: "cors",
+    });
+    const response = await dt.json();
+    console.log(response);
+    toast.success(response.message);
+    dispatch(creator(POST_PRODUCT, response));
+  } catch (error) {
+    toast.error(error);
     return console.log(error);
   }
 };

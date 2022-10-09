@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, POST_PRODUCT } from "..";
+import { GET_USERS, POST_USER, LOGIN_USER } from "..";
 
 const initialState = {
   isLoading: false,
@@ -9,7 +9,7 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_PRODUCTS:
+    case GET_USERS:
       return {
         ...state,
         isLoading: false,
@@ -17,12 +17,20 @@ export default (state = initialState, { type, payload }) => {
         data: payload,
       };
 
-    case POST_PRODUCT:
+    case POST_USER:
       return {
         ...state,
         isLoading: false,
         isLoaded: true,
         data: [...state.data, payload],
+      };
+
+    case LOGIN_USER:
+      return {
+        ...state,
+        isLoading: false,
+        isLoaded: true,
+        data: payload,
       };
 
     default:

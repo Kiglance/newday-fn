@@ -65,10 +65,22 @@ const Shop = (props) => {
                             />
                           </a>
                         </p>
-                        <h1 style={{ textAlign: "center", width: "180px" }}>
+                        <h1
+                          style={{
+                            textAlign: "center",
+                            width: "180px",
+                            color: "#333",
+                          }}
+                        >
                           {values.productName}
                         </h1>
-                        <p style={{ textAlign: "center", fontWeight: "600" }}>
+                        <p
+                          style={{
+                            textAlign: "center",
+                            fontWeight: "600",
+                            color: "#333",
+                          }}
+                        >
                           {values.price} $
                         </p>
                       </div>
