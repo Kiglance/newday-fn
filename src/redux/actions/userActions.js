@@ -33,8 +33,13 @@ export const registerUser = (data) => async (dispatch) => {
       mode: "cors",
     });
     const response = await dt.json();
-    console.log(response);
-    toast.success(response.message);
+    if (response.error !== undefined) {
+      toast.error(response.error);
+    }
+    if (response.message !== undefined) {
+      toast.success(response.message);
+    }
+
     dispatch(creator(POST_USER, response));
   } catch (error) {
     toast.error(error);
@@ -53,7 +58,6 @@ export const loginUser = (data) => async (dispatch) => {
       mode: "cors",
     });
     const response = await dt.json();
-    console.log(response);
     toast.success(response.message);
     dispatch(creator(LOGIN_USER, response));
   } catch (error) {

@@ -34,7 +34,6 @@ const Product = () => {
   const date = search?.map((datee) => {
     return datee.createdAt;
   });
-  console.log(search);
 
   const toPreviousPage = () => {
     setPage(Math.max(0, page - 1));
@@ -45,7 +44,6 @@ const Product = () => {
   };
 
   const nodef = search == undefined;
-  console.log(nodef);
   return (
     <div>
       <div className="containers">

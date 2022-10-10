@@ -29,15 +29,19 @@ const Login = (props) => {
       },
       body: JSON.stringify(send),
     })
-      .then(function (response) {
-        response.json().then(function (data) {
-          toast(data.message);
-          console.log(data.token == "");
-          localStorage.setItem("token", data.token);
+      .then(function (data) {
+        data.json().then(function (response) {
+          if (response.error !== undefined) {
+            toast.error(response.error);
+          }
+          if (response.message !== undefined) {
+            toast.success(response.message);
+          }
+          localStorage.setItem("token", response.token);
         });
       })
       .catch(function (err) {
-        console.log(err);
+        toast.error(err);
       });
   };
 
@@ -53,6 +57,7 @@ const Login = (props) => {
       }}
     >
       <ShopHeader />
+
       <Box
         style={{
           width: "300px",
@@ -98,6 +103,7 @@ const Login = (props) => {
           Sign In
         </Button>
       </Box>
+
       <div
         style={{
           backgroundColor: "#fff",
@@ -109,7 +115,6 @@ const Login = (props) => {
         }}
       >
         {availableUsers?.map((values) => {
-          console.log("--------------", values.Profiles.picture == "");
           return (
             <div
               key={values.userId}
@@ -172,7 +177,7 @@ const Login = (props) => {
           );
         })}
       </div>
-      <ToastContainer />
+      <ToastContainer theme="colored" />
     </div>
   );
 };

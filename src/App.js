@@ -11,6 +11,7 @@ import OneClasses from "./pages/shop/OneClasses";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import ProductActions from "./pages/ProductActions/ProductActions";
+import Categories from "./pages/Categories/Categories";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/user/" element={<Login />} exact={true} />
       <Route path="/signup/" element={<Signup />} exact={true} />
       <Route path="/pdts/" element={<ProductActions />} exact={true} />
+      <Route path="/cts/" element={<Categories />} exact={true} />
       <Route
         path="/category/class/:id/"
         element={<OneClasses />}

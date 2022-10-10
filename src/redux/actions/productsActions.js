@@ -41,14 +41,22 @@ export const getSearchedProducts = (searchedInput) => async (dispatch) => {
 
 export const createProduct = (data) => async (dispatch) => {
   try {
+    const token = localStorage.getItem("token");
     const dt = await fetch(`http://localhost:4040/api/v2/products/`, {
       method: "POST",
       body: data,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       mode: "cors",
     });
     const response = await dt.json();
-    console.log(response);
-    toast.success(response.message);
+    if (response.error !== undefined) {
+      toast.error(response.error);
+    }
+    if (response.message !== undefined) {
+      toast.success(response.message);
+    }
     dispatch(creator(POST_PRODUCT, response));
   } catch (error) {
     toast.error(error);

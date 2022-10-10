@@ -147,7 +147,7 @@ const ProductActions = (props) => {
           label="Description"
           placeholder="Description"
           multiline
-          rows={4}
+          minRows={4}
           onChange={(e) => {
             setDescription(e.target.value);
           }}
@@ -174,7 +174,7 @@ const ProductActions = (props) => {
           }}
         />
       ) : null}
-      <ToastContainer />{" "}
+      <ToastContainer theme="colored" />{" "}
     </div>
   );
 };

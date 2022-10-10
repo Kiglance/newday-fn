@@ -16,7 +16,6 @@ const Categories = (props) => {
 
   useEffect(() => {
     props.getAllProducts();
-
     props.getAllCategories();
   }, []);
 

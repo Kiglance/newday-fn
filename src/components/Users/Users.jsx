@@ -10,7 +10,6 @@ const Users = () => {
         return data.json();
       })
       .then((data) => {
-        console.log(data.body);
         setUsers(data.body);
       });
   }, []);

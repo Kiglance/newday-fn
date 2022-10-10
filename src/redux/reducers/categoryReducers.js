@@ -1,4 +1,4 @@
-import { GET_CATEGORIES, GET_ONE_CATEGORY } from "..";
+import { GET_CATEGORIES, CREATE_CATEGORY } from "..";
 
 const initialState = {
   isLoading: false,
@@ -15,6 +15,14 @@ export default (state = initialState, { type, payload }) => {
         isLoading: false,
         isLoaded: true,
         data: payload,
+      };
+
+    case CREATE_CATEGORY:
+      return {
+        ...state,
+        isLoading: false,
+        isLoaded: true,
+        data: [...state.data, payload],
       };
 
     default:

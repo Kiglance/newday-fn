@@ -26,8 +26,6 @@ const ShopOne = (props) => {
     }
   }, [fetchedProduct.body]);
 
-  console.log(prodId);
-
   return (
     <div
       style={{

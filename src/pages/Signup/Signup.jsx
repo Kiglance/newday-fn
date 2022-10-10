@@ -26,8 +26,6 @@ const Signup = (props) => {
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
 
-  const [isSucces, setSuccess] = useState(null);
-
   const handleInputChange = (e) => {
     setPicture({
       ...picture,
@@ -203,7 +201,7 @@ const Signup = (props) => {
           Send
         </Button>{" "}
       </Box>
-      <ToastContainer />{" "}
+      <ToastContainer theme="colored" />{" "}
     </div>
   );
 };

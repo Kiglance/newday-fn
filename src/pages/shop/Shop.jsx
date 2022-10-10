@@ -47,7 +47,7 @@ const Shop = (props) => {
                     justifyContent: "space-evenly",
                   }}
                 >
-                  {availableProducts.map((values) => {
+                  {availableProducts?.map((values) => {
                     return (
                       <div key={values.productName} style={{ margin: "20px" }}>
                         <p style={{ width: "200px", height: "250px" }}>
