@@ -51,14 +51,15 @@ const Shop = (props) => {
           padding: "40px 0",
           margin: "80px auto",
         }}
+        className="one-container"
       >
         {" "}
         <BsIcons.BsArrowLeftSquareFill
           onClick={() => nav(-1)}
           style={{
             fontSize: "40px",
-            color: "#00808095",
-            margin: "50px",
+            color: "#1F618D",
+            margin: "0 50px",
             borderRadius: "50%",
           }}
         />
@@ -90,8 +91,8 @@ const Shop = (props) => {
                 <h1 style={{ textAlign: "center", width: "180px" }}>
                   {values.productName}
                 </h1>
-                <p style={{ textAlign: "center", fontWeight: "600" }}>
-                  {values.price} $
+                <p style={{ textAlign: "center", color: "#555" }}>
+                  <em>$ {values.price} </em>
                 </p>
               </div>
             );

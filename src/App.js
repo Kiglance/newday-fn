@@ -12,6 +12,8 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import ProductActions from "./pages/ProductActions/ProductActions";
 import Categories from "./pages/Categories/Categories";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Users from "./components/Users/Users";
 
 function App() {
   return (
@@ -23,10 +25,12 @@ function App() {
       <Route path="/arr/" element={<Shop />} exact={true} />
       <Route path="/product/:id/" element={<ShopOne />} exact={true} />
       <Route path="/category/:id/" element={<OneCategory />} exact={true} />
-      <Route path="/user/" element={<Login />} exact={true} />
+      <Route path="/login/" element={<Login />} exact={true} />
       <Route path="/signup/" element={<Signup />} exact={true} />
       <Route path="/pdts/" element={<ProductActions />} exact={true} />
       <Route path="/cts/" element={<Categories />} exact={true} />
+      <Route path="/dashboard/" element={<Dashboard />} exact={true} />
+      <Route path="/users/" element={<Users />} exact={true} />
       <Route
         path="/category/class/:id/"
         element={<OneClasses />}

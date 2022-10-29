@@ -11,12 +11,14 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 50%;
   margin: 50px auto 30px;
-  border: 1px solid #00808090;
+  padding: 30px 0;
+  border: 1px solid #1f618d90;
   border-radius: 5px;
 }
 .box-container input {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }

@@ -66,7 +66,7 @@
 .next-btn {
   z-index: 999;
   font-size: 50px;
-  color: #008080;
+  color: #1f618d;
   padding: 10px;
   cursor: pointer;
   margin-top: 230px;
@@ -97,7 +97,7 @@
 }
 
 .navigation-visibility .slide-icon.active {
-  background: #008080;
+  background: #1f618d;
 }
 
 @media (max-width: 800px) {

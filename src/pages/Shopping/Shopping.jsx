@@ -324,9 +324,8 @@ const Shopping = () => {
                       </div>
                       <div className="name_price">
                         <h1 id="productName">{values.productName}</h1>
-                        <p>
-                          <span>$ </span>
-                          {values.price}
+                        <p style={{ color: " #555" }}>
+                          <em>$ {values.price}</em>
                         </p>
                       </div>
                       <button className="shop_btn">
@@ -351,9 +350,8 @@ const Shopping = () => {
                       </div>
                       <div className="name_price">
                         <h1 id="productName">{values.productName}</h1>
-                        <p>
-                          <span>$ </span>
-                          {values.price}
+                        <p style={{ color: " #555" }}>
+                          <em>$ {values.price}</em>
                         </p>
                       </div>
                       <button className="shop_btn">

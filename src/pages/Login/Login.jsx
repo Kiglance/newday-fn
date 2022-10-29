@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { getAllUsers, loginUser } from "../../redux/actions/userActions";
-import { connect } from "react-redux";
 import ShopHeader from "../../components/ShopHeader/ShopHeader";
 import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { Box } from "@material-ui/core";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
-  const { allUsers, isLoaded } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    props.getAllUsers();
-  }, []);
+  const nav = useNavigate();
 
   const submitRecord = (e) => {
     const send = {
@@ -36,6 +32,10 @@ const Login = (props) => {
           }
           if (response.message !== undefined) {
             toast.success(response.message);
+
+            setTimeout(() => {
+              nav("/dashboard");
+            }, 2000);
           }
           localStorage.setItem("token", response.token);
         });
@@ -45,7 +45,27 @@ const Login = (props) => {
       });
   };
 
-  const availableUsers = allUsers.body;
+  const tokenId = window.location.href.split("?")[1];
+
+  const verifyUser = async () => {
+    const dt = fetch(
+      `http://localhost:4040/api/v2/users/verify_user/${tokenId}`
+    )
+      .then((data) => {
+        return data.json();
+      })
+      .then((response) => {
+        if (response.error !== undefined) {
+          return toast.error(response.error);
+        }
+        if (response.message !== undefined) {
+          return toast.success(response.message);
+        }
+      })
+      .catch(function (err) {
+        return toast.error(err);
+      });
+  };
 
   return (
     <div
@@ -93,7 +113,7 @@ const Login = (props) => {
           size="large"
           variant="contained"
           style={{
-            backgroundColor: "#008080",
+            backgroundColor: "#1F618D",
             color: "#fff",
             height: "40px",
             margin: "0px auto 20px",
@@ -103,80 +123,21 @@ const Login = (props) => {
           Sign In
         </Button>
       </Box>
-
-      <div
+      <Button
+        size="large"
+        variant="contained"
         style={{
-          backgroundColor: "#fff",
-          minHeight: "100vh",
-          width: "90%",
-          margin: "0 auto",
-          height: "fit-content",
-          paddingTop: "80px",
+          backgroundColor: "#1F618D",
+          color: "#fff",
+          height: "40px",
+          margin: "0px auto 20px",
+          display: "none",
         }}
+        onClick={() => verifyUser()}
       >
-        {availableUsers?.map((values) => {
-          return (
-            <div
-              key={values.userId}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <div>
-                <img
-                  src={values.Profiles.picture}
-                  alt=""
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50%",
-                    border: "1px solid red",
-                    margin: "10px",
-                  }}
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                }}
-              >
-                <h1
-                  style={{
-                    margin: "0 10px",
-                  }}
-                >
-                  {values.firstName}
-                </h1>
-                <h1
-                  style={{
-                    margin: "0 10px",
-                  }}
-                >
-                  {values.lastName}
-                </h1>
-                <h1
-                  style={{
-                    margin: "0 10px",
-                  }}
-                >
-                  {values.email}
-                </h1>
-                <h1
-                  style={{
-                    margin: "0 10px",
-                  }}
-                >
-                  {values.Profiles.phoneNumber}
-                </h1>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+        verify
+      </Button>
+
       <ToastContainer theme="colored" />
     </div>
   );
@@ -187,6 +148,4 @@ const mapState = ({ users }) => ({
   isLoaded: users.isLoaded,
 });
 
-export default connect(mapState, {
-  getAllUsers,
-})(Login);
+export default Login;

@@ -4,7 +4,7 @@ import * as FiIcons from "react-icons/fi";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 // import logo from "../../
-import logo from "../../assets/word.png";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import "./HomeHeader.css";
 
@@ -49,7 +49,7 @@ const HomeHeader = () => {
       scrollProgress.addEventListener("click", () => {
         document.documentElement.scrollTop = 0;
       });
-      scrollProgress.style.background = `conic-gradient(#008080 ${scrollValue}%, #d7d7d700 ${scrollValue}%)`;
+      scrollProgress.style.background = `conic-gradient(#1F618D ${scrollValue}%, #d7d7d700 ${scrollValue}%)`;
     };
     window.onscroll = calcScrollValue;
     window.onload = calcScrollValue;

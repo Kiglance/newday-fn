@@ -15,6 +15,21 @@ const Shop = (props) => {
 
   const availableProducts = allProducts.body;
 
+  availableProducts?.sort((a, b) => {
+    const lowName = a.productName;
+    const highName = b.productName;
+
+    if (lowName > highName) {
+      return 1;
+    }
+    if (lowName < highName) {
+      return -1;
+    }
+    return 0;
+  });
+
+  // console.log("sorted", sorted);
+
   return (
     <div
       style={{
@@ -69,7 +84,6 @@ const Shop = (props) => {
                           style={{
                             textAlign: "center",
                             width: "180px",
-                            color: "#333",
                           }}
                         >
                           {values.productName}
@@ -77,11 +91,10 @@ const Shop = (props) => {
                         <p
                           style={{
                             textAlign: "center",
-                            fontWeight: "600",
-                            color: "#333",
+                            color: "#555",
                           }}
                         >
-                          {values.price} $
+                          <em>$ {values.price}</em>
                         </p>
                       </div>
                     );

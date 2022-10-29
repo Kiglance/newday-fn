@@ -46,14 +46,15 @@ const OneCategory = (props) => {
           padding: "40px 0",
           margin: "80px auto",
         }}
+        className="one-container"
       >
         {" "}
         <BsIcons.BsArrowLeftSquareFill
           onClick={() => nav(-1)}
           style={{
             fontSize: "40px",
-            color: "#00808095",
-            margin: "50px",
+            color: "#1F618D",
+            margin: "0 50px",
             borderRadius: "50%",
           }}
         />

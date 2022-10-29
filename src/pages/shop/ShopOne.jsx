@@ -45,13 +45,14 @@ const ShopOne = (props) => {
           padding: "40px 0",
           margin: "80px auto",
         }}
+        className="one-container"
       >
         <BsIcons.BsArrowLeftSquareFill
           onClick={() => nav(-1)}
           style={{
             fontSize: "40px",
-            color: "#00808095",
-            margin: "50px",
+            color: "#1F618D",
+            margin: "0 50px",
             borderRadius: "50%",
           }}
         />
@@ -62,7 +63,7 @@ const ShopOne = (props) => {
                 textAlign: "center",
                 fontWeight: "600",
                 textTransform: "uppercase",
-                color: "#008080",
+                color: "#1ABC9C",
                 fontSize: "25px",
               }}
             >
@@ -81,7 +82,7 @@ const ShopOne = (props) => {
                   width: "100%",
                   height: "250px",
                   border: "1px solid #cfcfcf",
-                  margin: "20px auto",
+                  margin: "20px auto 0",
                 }}
               />
             </p>
@@ -89,11 +90,10 @@ const ShopOne = (props) => {
             <p
               style={{
                 textAlign: "center",
-                fontWeight: "600",
-                color: "#000",
+                color: "#555",
               }}
             >
-              $ {newProduct.price}
+              <em>$ {newProduct.price}</em>
             </p>
             <p style={{ textAlign: "center" }} className="one_shop_text">
               {newProduct.description}

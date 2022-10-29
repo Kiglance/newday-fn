@@ -3,9 +3,11 @@ import { Link } from "react-scroll";
 import * as BiIcons from "react-icons/bi";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
-// import logo from "../../
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import "./ShopHeader.css";
 
 const ShopHeader = () => {
@@ -19,11 +21,27 @@ const ShopHeader = () => {
     nav("/home");
   };
 
+  const toSignIn = () => {
+    nav("/login");
+  };
+
+  const toSignUp = () => {
+    nav("/signup");
+  };
+
   const showProductHandler = () => {
     setShowProducts((value) => !value);
     setClicked((value) => !value);
   };
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div className="shop_header_container">
       <div className="shop_header">
@@ -42,13 +60,35 @@ const ShopHeader = () => {
             <BiIcons.BiSearch className="shop_header_icons" />
           </span>
           <span>
-            <FaIcons.FaUserAlt className="shop_header_icons" />
+            {" "}
+            <FaIcons.FaUserAlt
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              className="shop_header_icons"
+              onMouseEnter={handleClick}
+            />
           </span>
           <span>
             <BsIcons.BsFillBagFill className="shop_header_icons" />
           </span>
         </div>
-      </div>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <a href={`#}`} style={{ color: "#333" }}>
+            <MenuItem onClick={toSignIn}>Login</MenuItem>
+            <MenuItem onClick={toSignUp}>Sign up</MenuItem>
+          </a>
+        </Menu>
+      </div>{" "}
     </div>
   );
 };

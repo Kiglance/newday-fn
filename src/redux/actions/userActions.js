@@ -6,6 +6,7 @@ export const getAllUsers = () => async (dispatch) => {
   try {
     const data = await fetch(`http://localhost:4040/api/v2/users/`);
     const users = await data.json();
+    console.log("_____________", users);
     dispatch(creator(GET_USERS, users));
   } catch (error) {
     if (error) {

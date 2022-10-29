@@ -47,28 +47,6 @@ const Product = () => {
   return (
     <div>
       <div className="containers">
-        {/* {search?.map((values) => {
-          return (
-            <div className="box">
-              <div className="overlay">
-                <div id="images">
-                  <img src={values.productImage} alt="Product image" />
-                </div>
-              </div>
-              <div id="content">
-                <h1 key={values.productName} id="productName">
-                  {values.productName}
-                </h1>
-                <p key={values.price}>{values.price}</p>
-                <p key={values.description}>{values.description}</p>
-                <p key={values.createdAt} id="date">
-                  <span>Added on: </span>
-                  {convertTime(values.createdAt)}
-                </p>
-              </div>
-            </div>
-          );
-        })} */}
         {!nodef ? (
           <>
             <table>

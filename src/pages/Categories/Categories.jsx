@@ -126,7 +126,7 @@ const Categories = (props) => {
           alignItems: "center",
           flexWrap: "wrap",
           backgroundColor: "#fff",
-          border: "1px solid #00808090",
+          border: "1px solid #1F618D90",
           borderRadius: "5px",
         }}
       >
@@ -144,7 +144,7 @@ const Categories = (props) => {
           size="large"
           variant="contained"
           style={{
-            backgroundColor: "#008080",
+            backgroundColor: "#1F618D",
             color: "#fff",
             height: "40px",
             margin: "0px auto 20px",
@@ -163,7 +163,7 @@ const Categories = (props) => {
           alignItems: "center",
           flexWrap: "wrap",
           backgroundColor: "#fff",
-          border: "1px solid #00808090",
+          border: "1px solid #1F618D90",
           borderRadius: "5px",
         }}
       >
@@ -195,7 +195,7 @@ const Categories = (props) => {
           size="large"
           variant="contained"
           style={{
-            backgroundColor: "#008080",
+            backgroundColor: "#1F618D",
             color: "#fff",
             height: "40px",
             margin: "0px auto 20px",
@@ -214,7 +214,7 @@ const Categories = (props) => {
           alignItems: "center",
           flexWrap: "wrap",
           backgroundColor: "#fff",
-          border: "1px solid #00808090",
+          border: "1px solid #1F618D90",
           borderRadius: "5px",
         }}
       >
@@ -269,7 +269,7 @@ const Categories = (props) => {
           size="large"
           variant="contained"
           style={{
-            backgroundColor: "#008080",
+            backgroundColor: "#1F618D",
             color: "#fff",
             height: "40px",
             margin: "0px auto 20px",
@@ -289,7 +289,7 @@ const Categories = (props) => {
           alignItems: "center",
           flexWrap: "wrap",
           backgroundColor: "#fff",
-          border: "1px solid #00808090",
+          border: "1px solid #1F618D90",
           borderRadius: "5px",
         }}
       >
@@ -357,7 +357,7 @@ const Categories = (props) => {
           size="large"
           variant="contained"
           style={{
-            backgroundColor: "#008080",
+            backgroundColor: "#1F618D",
             color: "#fff",
             height: "40px",
             margin: "0px auto 20px",

@@ -155,7 +155,7 @@ const ProductActions = (props) => {
         <Button
           size="large"
           variant="contained"
-          style={{ backgroundColor: "#008080", color: "#fff", height: "40px" }}
+          style={{ backgroundColor: "#1F618D", color: "#fff", height: "40px" }}
           onClick={() => submit()}
         >
           Save

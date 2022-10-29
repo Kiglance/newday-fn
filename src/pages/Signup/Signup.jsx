@@ -6,9 +6,15 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 import { Box } from "@material-ui/core";
 import ShopHeader from "../../components/ShopHeader/ShopHeader";
 import "../ProductActions/ProductActions.css";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { countries } from "../../Data";
 
 const Signup = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -25,6 +31,8 @@ const Signup = (props) => {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
+
+  console.log("****************-----------___**********", country);
 
   const handleInputChange = (e) => {
     setPicture({
@@ -58,10 +66,14 @@ const Signup = (props) => {
         <TextField
           value={firstName}
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="text"
+          name="firstName"
           label="First Name"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="First Name"
           onChange={(e) => {
             setFirstName(e.target.value);
@@ -69,10 +81,14 @@ const Signup = (props) => {
         />
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="text"
+          name="lastName"
           label="Last Name"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => {
@@ -81,10 +97,14 @@ const Signup = (props) => {
         />
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="email"
+          name="email"
           label="Email"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="Email"
           value={email}
           onChange={(e) => {
@@ -93,10 +113,14 @@ const Signup = (props) => {
         />
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="password"
+          name="password"
           label="Password"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="Password"
           value={password}
           onChange={(e) => {
@@ -105,56 +129,171 @@ const Signup = (props) => {
         />
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="date"
+          name="date"
+          label="Date of birth"
+          InputLabelProps={{
+            shrink: true,
+          }}
           value={birthDate}
           onChange={(e) => {
             setDob(e.target.value);
           }}
         />
-        <TextField
-          required
-          style={{ display: "block", margin: "20px", width: "200px" }}
-          variant="outlined"
-          type="text"
-          label="Gender"
-          placeholder="Gender"
-          value={gender}
-          onChange={(e) => {
-            setGender(e.target.value);
+        <FormControl
+          style={{ display: "block", margin: "10px" }}
+          InputLabelProps={{
+            shrink: true,
           }}
-        />
+        >
+          <InputLabel
+            required
+            InputLabelProps={{
+              shrink: true,
+            }}
+          >
+            Gender
+          </InputLabel>
+          <Select
+            value={gender}
+            defaultValue="male"
+            label="Gender"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            name="gender"
+            onChange={(e) => {
+              setGender(e.target.value);
+            }}
+            style={{ display: "block", width: "200px" }}
+          >
+            <MenuItem value="male">male</MenuItem>
+            <MenuItem value="female">female</MenuItem>
+          </Select>
+        </FormControl>
+        {/* <TextField
+          required
+          variant="outlined"
+          select
+          label="Phone Number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        >
+          <MenuItem key="male" value="male">
+            male
+          </MenuItem>
+          <MenuItem value="female">female</MenuItem>
+        </TextField> */}
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="number"
+          name="number"
           label="Phone Number"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="Phone Number"
           value={phoneNumber}
           onChange={(e) => {
             setPhoneNumber(e.target.value);
           }}
         />
-        <TextField
-          required
-          style={{ display: "block", margin: "20px", width: "200px" }}
-          variant="outlined"
-          type="text"
-          label="Country"
-          placeholder="Country"
-          value={country}
-          onChange={(e) => {
-            setCountry(e.target.value);
+        {/* <FormControl
+          style={{ display: "block", margin: "10px" }}
+          InputLabelProps={{
+            shrink: true,
           }}
+        >
+          <InputLabel
+            required
+            InputLabelProps={{
+              shrink: true,
+            }}
+          >
+            Country
+          </InputLabel>
+          <Select
+            value={country}
+            defaultValue="male"
+            label="Gender"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            name="country"
+            onChange={(e) => {
+              setCountry(e.target.value);
+            }}
+            style={{ display: "block", width: "200px" }}
+          >
+            {countries?.map((values) => {
+              return (
+                <MenuItem key={values} value={values} id={values}>
+                  {values}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl> */}
+        <Autocomplete
+          id="country-select-demo"
+          sx={{ width: 200 }}
+          options={countries}
+          autoHighlight
+          getOptionLabel={(option) => option.label}
+          onChange={(e) => {
+            const val = e.target.innerText.split(" (");
+            console.log("Box", val);
+            setCountry(val[0]);
+          }}
+          renderOption={(props, option) => (
+            <Box
+              component="li"
+              sx={{ "& > img": { mr: 2, flexShrink: 0 }, width: 300 }}
+              {...props}
+            >
+              <img
+                loading="lazy"
+                width="20"
+                src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                alt=""
+                style={{ marginRight: "10px" }}
+              />
+              {option.label} (+{option.phone})
+            </Box>
+          )}
+          renderInput={(params) => (
+            <TextField
+              variant="outlined"
+              {...params}
+              label="Choose a country"
+              inputProps={{
+                ...params.inputProps,
+                autoComplete: "new-password", // disable autocomplete and autofill
+              }}
+              value={country}
+              onChange={(e) => {
+                console.log("country", country);
+                setCountry(e.target.value);
+              }}
+            />
+          )}
         />
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="text"
+          name="city"
           label="City"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="City"
           value={city}
           onChange={(e) => {
@@ -163,10 +302,14 @@ const Signup = (props) => {
         />
         <TextField
           required
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="text"
+          name="street"
           label="Street"
+          InputLabelProps={{
+            shrink: true,
+          }}
           placeholder="Street"
           value={street}
           onChange={(e) => {
@@ -174,9 +317,10 @@ const Signup = (props) => {
           }}
         />
         <TextField
-          style={{ display: "block", margin: "20px", width: "200px" }}
+          style={{ display: "block", margin: "10px", width: "200px" }}
           variant="outlined"
           type="file"
+          name="picture"
           onChange={handleInputChange}
         />{" "}
         {picture.filepreview !== null ? (
@@ -191,7 +335,7 @@ const Signup = (props) => {
           size="large"
           variant="contained"
           style={{
-            backgroundColor: "#008080",
+            backgroundColor: "#1F618D",
             color: "#fff",
             height: "40px",
             marginLeft: "30px",

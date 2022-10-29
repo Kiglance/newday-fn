@@ -72,7 +72,7 @@
 }
 
 .shop_btn:hover {
-  background-color: #008080;
+  background-color: #1f618d;
   color: #ffffff;
   border: none;
 }
@@ -84,8 +84,8 @@
 }
 .name_price > p,
 .name_price > p > span {
-  font-weight: bold;
-  font-size: 16px;
+  /* font-weight: bold;
+  font-size: 16px; */
   text-align: center;
 }
 .sorted_prices > div > ul {
@@ -96,7 +96,7 @@
   cursor: pointer;
 }
 .sorted_prices > div > ul > li:hover {
-  color: #008080;
+  color: #1f618d;
   font-weight: 600;
 }
 .sorted_data {
@@ -117,11 +117,8 @@
   cursor: pointer;
 }
 .sorted_data > div > ul > li:hover {
-  color: #008080;
+  color: #1f618d;
   font-weight: 600;
-}
-.down_arrow_icons {
-  margin: 0 20px;
 }
 
 .sub_header_container {
@@ -157,7 +154,7 @@
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  width: 300px;
+  /* width: 300px; */
 }
 
 .align input {
@@ -166,10 +163,11 @@
 
 .searchIcon {
   position: absolute;
-  top: 4px;
-  left: 160px;
-  width: 30px;
+  top: 3px;
+  left: 150px;
+  width: 25px;
   height: auto;
+  color: rgb(74, 74, 74);
 }
 
 input:focus {

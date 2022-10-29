@@ -9,12 +9,14 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background-color: #008080;
-  border-bottom: 1px solid #333;
+  background-color: #1f618d;
+  /* border-bottom: 1px solid #333; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .shop_header_icons {
   font-size: 20px;
   margin: 0 15px;
+  color: #fff;
 }
 .shop_nav_1 {
   display: flex;
