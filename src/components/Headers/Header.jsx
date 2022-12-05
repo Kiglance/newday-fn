@@ -8,8 +8,6 @@ const Header = () => {
 
   const url = window.location.href;
 
-  console.log(url.indexOf("start_shopping") > -1);
-  console.log(url.indexOf("home") > -1);
   return <div></div>;
 };
 

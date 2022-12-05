@@ -1,8 +1,10 @@
 export const convertTime = (time) => {
-  return new Date(time).toLocaleDateString("en-us", {
+  return new Date(time).toLocaleDateString("en-gb", {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
-    weekday: "long",
+    // weekday: "long",
   });
 };
+
+// lang: en-gb or en-us

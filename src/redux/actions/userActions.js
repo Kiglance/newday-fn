@@ -1,12 +1,21 @@
 import creator from "./creator";
-import { GET_USERS, GET_ONE_USER, POST_USER, LOGIN_USER } from "..";
+import {
+  GET_USERS,
+  GET_ONE_USER,
+  POST_USER,
+  LOGIN_USER,
+  UPDATE_USER,
+  DELETE_USER,
+  UPDATE_USER_PROFILE,
+} from "..";
 import { toast } from "react-toastify";
+
+const token = localStorage.getItem("token");
 
 export const getAllUsers = () => async (dispatch) => {
   try {
     const data = await fetch(`http://localhost:4040/api/v2/users/`);
     const users = await data.json();
-    console.log("_____________", users);
     dispatch(creator(GET_USERS, users));
   } catch (error) {
     if (error) {
@@ -61,6 +70,71 @@ export const loginUser = (data) => async (dispatch) => {
     const response = await dt.json();
     toast.success(response.message);
     dispatch(creator(LOGIN_USER, response));
+  } catch (error) {
+    toast.error(error);
+    return console.log(error);
+  }
+};
+
+export const updateUser = (data, userId) => async (dispatch) => {
+  try {
+    const dt = await fetch(`http://localhost:4040/api/v2/users/${userId}`, {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      mode: "cors",
+    });
+    const response = await dt.json();
+
+    toast.success(response.message) || toast.error(response.error);
+    dispatch(creator(UPDATE_USER, userId));
+  } catch (error) {
+    toast.error(error);
+    return console.log(error);
+  }
+};
+
+export const updateUserProfile =
+  ({ userId, profileId, userInfo }) =>
+  async (dispatch) => {
+    try {
+      const dt = await fetch(
+        `http://localhost:4040/api/v2/profile/${userId}/${profileId}`,
+        {
+          method: "PATCH",
+          body: userInfo,
+          headers: {
+            // "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          mode: "cors",
+        }
+      );
+      const response = await dt.json();
+      toast.success(response.message);
+      dispatch(creator(UPDATE_USER_PROFILE, response));
+    } catch (error) {
+      toast.error(error);
+      return console.log(error);
+    }
+  };
+
+export const deleteUser = (userId) => async (dispatch) => {
+  try {
+    const dt = await fetch(`http://localhost:4040/api/v2/users/${userId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      method: "DELETE",
+      mode: "cors",
+    });
+    const response = await dt.json();
+    toast.success(response.message);
+    dispatch(creator(DELETE_USER, userId));
   } catch (error) {
     toast.error(error);
     return console.log(error);

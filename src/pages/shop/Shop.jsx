@@ -5,6 +5,8 @@ import ShopHeader from "../../components/ShopHeader/ShopHeader";
 import "./Shop.css";
 import Categories from "../../components/Categories/Categories";
 import Footer from "../../components/Footer/Footer";
+import * as BsIcons from "react-icons/bs";
+import * as FaIcons from "react-icons/fa";
 
 const Shop = (props) => {
   const { allProducts, isLoaded } = props;
@@ -28,8 +30,34 @@ const Shop = (props) => {
     return 0;
   });
 
-  // console.log("sorted", sorted);
+  const todoIt = useState({
+    0: { 0: false },
+    1: { 0: false },
+    2: { 0: false },
+    3: { 0: false },
+    4: { 0: false },
+  });
 
+  const [parentId, setParentId] = useState(0);
+  const [childId, setChildId] = useState(0);
+  const [state, setState] = useState();
+  const [clicked, setClicked] = useState(false);
+  const [hovered, setHovered] = useState({});
+  const [clickedState, setClickedState] = useState({ prt: 0, chld: 0 });
+
+  useEffect(() => {
+    if (availableProducts != undefined) {
+      setState(availableProducts[parentId].ProductImages[childId]);
+    }
+  }, [parentId, childId]);
+
+  const arrayTitle = availableProducts?.map((x, idx) => {
+    return x.ProductImages[0]?.imageUrl;
+  });
+  const new_arrayTitle = availableProducts?.map((x, idx) => {
+    return x.ProductImages;
+  });
+  console.log(new_arrayTitle);
   return (
     <div
       style={{
@@ -41,71 +69,86 @@ const Shop = (props) => {
     >
       <ShopHeader />
       <Categories />
-      <div
-        style={{
-          backgroundColor: "#fff",
-          minHeight: "100vh",
-          width: "90%",
-          margin: "0 auto",
-          height: "fit-content",
-          paddingTop: "80px",
-        }}
-      >
-        <>
-          <div>
-            {isLoaded ? (
-              <>
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "space-evenly",
-                  }}
-                >
-                  {availableProducts?.map((values) => {
-                    return (
-                      <div key={values.productName} style={{ margin: "20px" }}>
-                        <p style={{ width: "200px", height: "250px" }}>
-                          <a href={`/product/${values.productId}`}>
-                            <img
-                              src={values.productImage}
-                              alt={values.productId}
-                              name={values.productId}
-                              style={{
-                                width: "100%",
-                                height: "100%",
-                                border: "1px solid #cfcfcf",
-                              }}
-                              id={values.productId}
-                            />
-                          </a>
-                        </p>
-                        <h1
-                          style={{
-                            textAlign: "center",
-                            width: "180px",
-                          }}
-                        >
-                          {values.productName}
-                        </h1>
-                        <p
-                          style={{
-                            textAlign: "center",
-                            color: "#555",
-                          }}
-                        >
-                          <em>$ {values.price}</em>
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </>
-            ) : null}
+      <div className="mt-[100px]  mx-auto flex flex-wrap justify-start items-center ">
+        {availableProducts?.map((v_1, ix) => (
+          <div
+            className="m-2 border rounded-[5px] pb-3 bg-white w-[200px]"
+            style={{
+              boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+            }}
+            key={ix}
+          >
+            <div
+              className="flex items-center w-fit relative border-b"
+              onMouseEnter={() => {
+                setHovered((hov) => ({
+                  ...hovered,
+                  [ix]: !hov[ix],
+                }));
+              }}
+              onMouseLeave={() => {
+                setHovered((hov) => ({ [ix]: !hov[ix] }));
+              }}
+            >
+              <a href={`/product/${v_1?.productId}`}>
+                <img
+                  src={
+                    parentId == ix && clicked ? state?.imageUrl : arrayTitle[ix]
+                  }
+                  className="w-[200px] h-[200px] object_fit"
+                />
+              </a>
+              <div
+                className={`block w-fit max-h-[200px] h-fit overflow-y-auto border-x border-x-white-300 absolute right-0  ${
+                  hovered[ix] ? "z-10" : "z-[-1]"
+                }`}
+              >
+                {v_1.ProductImages.map((data, ix_1) => (
+                  <div className="w-[50px] h-[40px]" key={ix_1}>
+                    <img
+                      onClick={() => {
+                        setClicked(true);
+                        setParentId(ix);
+                        setClickedState({
+                          ...clickedState,
+                          chld: ix_1,
+                          prt: ix,
+                        });
+                        setChildId(ix_1);
+                      }}
+                      className={
+                        childId == ix_1 && parentId == ix ? "clicked" : ""
+                      }
+                      src={data.imageUrl}
+                      style={{ height: "100%", width: "100%" }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-right ">
+              <em className="mx-2 text-[#004472]">{v_1.brand}®</em>
+            </div>
+            <div className="text-center mt-2 w-[100%] overflow-x-auto">
+              {v_1.productName}
+            </div>
+            <div className="text-center">
+              <em className="mx-2 font-bold">${v_1.price}</em>
+            </div>
+            <div className="text-center">
+              <del className="mx-2 text-stone-600">${v_1.price}</del>
+            </div>
+
+            <div className="flex  w-fit items-center mx-auto text-center mt-1">
+              <button className="border flex items-center px-3 py-2 rounded-[5px]  bg-slate-600  hover:bg-slate-500 text-white">
+                <FaIcons.FaShoppingCart className="mr-2" /> Add to cart
+              </button>
+            </div>
           </div>
-        </>
+        ))}
       </div>
-      <Footer />
+
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -35,6 +35,9 @@
   padding-bottom: 100px;
   box-sizing: border-box;
 }
+.dash-side-bar ul {
+  padding-top: 20px;
+}
 .dash-side-bar ul li {
   display: flex;
   flex-wrap: wrap;

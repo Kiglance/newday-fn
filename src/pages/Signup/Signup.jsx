@@ -15,6 +15,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { countries } from "../../Data";
+import Modal from "@mui/material/Modal";
+import Menu from "@mui/material/Menu";
 
 const Signup = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -31,8 +33,6 @@ const Signup = (props) => {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
-
-  console.log("****************-----------___**********", country);
 
   const handleInputChange = (e) => {
     setPicture({
@@ -55,6 +55,8 @@ const Signup = (props) => {
     formdata.append("city", city);
     formdata.append("street", street);
     formdata.append("picture", picture.file);
+
+    console.log(formdata, "formdata");
 
     props.registerUser(formdata);
   };
@@ -167,7 +169,7 @@ const Signup = (props) => {
             onChange={(e) => {
               setGender(e.target.value);
             }}
-            style={{ display: "block", width: "200px" }}
+            className="block w-[200px]"
           >
             <MenuItem value="male">male</MenuItem>
             <MenuItem value="female">female</MenuItem>
@@ -247,7 +249,6 @@ const Signup = (props) => {
           getOptionLabel={(option) => option.label}
           onChange={(e) => {
             const val = e.target.innerText.split(" (");
-            console.log("Box", val);
             setCountry(val[0]);
           }}
           renderOption={(props, option) => (
@@ -278,7 +279,6 @@ const Signup = (props) => {
               }}
               value={country}
               onChange={(e) => {
-                console.log("country", country);
                 setCountry(e.target.value);
               }}
             />

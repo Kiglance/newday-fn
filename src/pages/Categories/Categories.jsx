@@ -107,6 +107,10 @@ const Categories = (props) => {
     props.assignProductToClass(data);
   };
 
+  const arrayTitle = availableProducts?.map((x, idx) => {
+    return x.ProductImages[0]?.imageUrl;
+  });
+
   return (
     <div
       style={{
@@ -325,7 +329,7 @@ const Categories = (props) => {
             label="Product"
             onChange={handleProduct}
           >
-            {availableProducts?.map((values) => {
+            {availableProducts?.map((values, idx) => {
               return (
                 <MenuItem
                   key={values.productId}
@@ -339,7 +343,7 @@ const Categories = (props) => {
                   }}
                 >
                   <img
-                    src={values.productImage}
+                    src={arrayTitle[idx]}
                     alt=""
                     style={{
                       width: "40px",

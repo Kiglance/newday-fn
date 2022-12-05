@@ -8,10 +8,18 @@
   width: 100vw;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
-  background-color: #1f618d;
+  z-index: 1000;
+  background: linear-gradient(
+    to bottom left,
+    #214968,
+    #275a81,
+    #275a81,
+    #214968
+  );
+  /* background-color: rgb(71 85 105 / var(--tw-bg-opacity)); */
+
   /* border-bottom: 1px solid #333; */
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 .shop_header_icons {
   font-size: 20px;
@@ -29,7 +37,7 @@
   width: 50px;
   height: 40px;
   cursor: pointer;
-  color: #fff;
+  /* filter: invert(100%); */
 }
 
 .shop_nav_1 ul {
@@ -40,6 +48,7 @@
   display: flex;
   margin: 20px;
   cursor: pointer;
+  color: #fff;
 }
 
 .shop_header.shop_active {
@@ -47,7 +56,7 @@
 }
 
 .shop_nav_1 ul li:hover {
-  color: #000000;
+  color: #fff;
 }
 
 .shop_nav_2 span {

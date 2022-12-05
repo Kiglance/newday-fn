@@ -45,7 +45,7 @@ const Arrays = () => {
               style={{
                 color: "#005080",
                 textTransform: "uppercase",
-                fontWeight: "bold",
+                // fontWeight: "bold",
               }}
             >
               {values.productName}

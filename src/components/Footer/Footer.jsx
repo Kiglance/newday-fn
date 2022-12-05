@@ -10,7 +10,7 @@ const Footer = () => {
         <img src={logo} alt="" />
       </div>
       <div className="footer_center">
-        <div>
+        <div className="flex items-center">
           <AiIcons.AiFillFacebook className="shop_icons" />
           <AiIcons.AiFillTwitterSquare className="shop_icons" />
           <AiIcons.AiOutlineInstagram className="shop_icons" />

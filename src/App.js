@@ -14,6 +14,7 @@ import ProductActions from "./pages/ProductActions/ProductActions";
 import Categories from "./pages/Categories/Categories";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Users from "./components/Users/Users";
+import "./index.css";
 
 function App() {
   return (

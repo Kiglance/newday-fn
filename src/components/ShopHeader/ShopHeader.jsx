@@ -55,9 +55,9 @@ const ShopHeader = () => {
             <li>Blog</li>
           </ul>
         </div>
-        <div className="shop_nav_2">
+        <div className="flex items-center">
           <span>
-            <BiIcons.BiSearch className="shop_header_icons" />
+            <BiIcons.BiSearch className=" text-white text-10 mx-2" />
           </span>
           <span>
             {" "}
@@ -66,12 +66,12 @@ const ShopHeader = () => {
               aria-controls={open ? "basic-menu" : undefined}
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
-              className="shop_header_icons"
-              onMouseEnter={handleClick}
+              className="text-white text-15 mx-2"
+              onClick={handleClick}
             />
           </span>
           <span>
-            <BsIcons.BsFillBagFill className="shop_header_icons" />
+            <BsIcons.BsFillBagFill className="text-white text-15 mx-2" />
           </span>
         </div>
         <Menu

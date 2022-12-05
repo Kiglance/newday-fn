@@ -10,7 +10,7 @@ const Container = styled.div`
   border-radius: 50%;
   border: 1px solid #fff;
   padding: 5px;
-  
+
   transition: all 0.5s;
   margin-left: 20px;
 
@@ -42,7 +42,6 @@ const SearchInput = styled.input`
   line-height: 30px;
   outline: 0;
   border: 0;
-  font-size: 16px;
   border-radius: 20px;
   padding: 0 20px;
   margin: 0;

@@ -62,8 +62,6 @@ const HomeHeader = () => {
 
   const url = window.location.href;
 
-  console.log(url.indexOf("start_shopping") > -1);
-  console.log(url.indexOf("home") > -1);
   return (
     <div className="header_container">
       <div className={navBar ? "header active" : "header"}>
