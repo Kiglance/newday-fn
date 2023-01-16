@@ -7,7 +7,6 @@ import ShopHeader from "../../components/ShopHeader/ShopHeader";
 import "./Shop.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import img1 from "../../assets/shard.jpeg";
 import Categories from "../../components/Categories/Categories";
 
 const OneCategory = (props) => {

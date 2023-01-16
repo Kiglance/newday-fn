@@ -3,19 +3,19 @@
 }
 .shop_header {
   display: flex;
-  color: #ffffff;
+  /* color: #ffffff; */
   position: fixed;
   width: 100vw;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom left,
     #214968,
     #275a81,
     #275a81,
     #214968
-  );
+  ); */
   /* background-color: rgb(71 85 105 / var(--tw-bg-opacity)); */
 
   /* border-bottom: 1px solid #333; */
@@ -24,7 +24,7 @@
 .shop_header_icons {
   font-size: 20px;
   margin: 0 15px;
-  color: #fff;
+  /* color: #fff; */
 }
 .shop_nav_1 {
   display: flex;

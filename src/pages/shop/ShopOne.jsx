@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as BsIcons from "react-icons/bs";
 import * as FaIcons from "react-icons/fa";
 import ShopHeader from "../../components/ShopHeader/ShopHeader";
+import Header from "../../components/Headers/Header";
 import "./Shop.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
@@ -14,9 +15,9 @@ const ShopOne = (props) => {
   const { isLoaded, fetchedProduct } = props;
 
   const [newProduct, setNewProduct] = useState("");
-  const ProductImages = newProduct?.ProductImages;
-
-  console.log(newProduct, "newProduct");
+  const firstImage = newProduct ? newProduct?.images[0] : "";
+  const [selectedImage, setSelectedImage] = useState("");
+  const images = newProduct?.images;
 
   const nav = useNavigate();
 
@@ -32,20 +33,23 @@ const ShopOne = (props) => {
     props.getOneProduct(prodId);
   }, []);
 
+  console.log(firstImage, "***");
+  console.log(selectedImage, "$$$");
+
   return (
     <div
       style={{
-        backgroundColor: "#f1f1f1",
+        backgroundColor: "#fff",
         minHeight: "100vh",
         width: "100vw",
         height: "fit-content",
       }}
     >
-      <ShopHeader />
-      <Categories />
+      <Header />
+      {/* <Categories /> */}
       <div
         style={{
-          backgroundColor: "#fff",
+          backgroundColor: "#f1f1f1",
           minHeight: "50vh",
           width: "70%",
           padding: "40px 0",
@@ -80,18 +84,20 @@ const ShopOne = (props) => {
                 width: "100%",
                 margin: "auto",
               }}
-              className="flex flex-wrap items-center  justify-start"
+              className="flex flex-nowrap items-center flex-shrink  justify-around overflow-auto"
             >
-              {ProductImages?.map((values) => {
+              {images?.map((values, idx) => {
                 return (
                   <img
-                    src={values.imageUrl}
-                    key={values.imageId}
+                    src={values}
+                    key={values}
                     alt=""
+                    onClick={() => setSelectedImage(values)}
                     style={{
                       width: "250px",
                       height: "250px",
                       border: "1px solid #cfcfcf",
+                      borderRadius: "10px",
                       margin: "20px auto 0",
                     }}
                   />
@@ -105,14 +111,14 @@ const ShopOne = (props) => {
                 color: "#555",
               }}
             >
-              <em>$ {newProduct.price}</em>
+              {/* <em>$ {newProduct.price}</em> */}
             </p>
-            <p
+            {/* <p
               style={{ textAlign: "center", width: "300px", margin: "auto" }}
               className="one_shop_text"
             >
               {newProduct.description}
-            </p>
+            </p> */}
           </div>
         </h1>
       </div>
@@ -122,18 +128,13 @@ const ShopOne = (props) => {
           boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
         }}
       >
-        <span
-          className="bg-[#c6ffb9] w-[47%] h-[100%] rounded-[10px]"
+        <img
+          src={!selectedImage ? firstImage : selectedImage}
+          className="bg-[#c6ffb9] w-[47%] h-[100%] rounded-[10px] object-cover"
           style={{
             borderRadius: "10px 0 0 10px",
           }}
-        >
-          {/* <img
-            src={ProductImages[0]?.imageUrl}
-            alt=""
-            className="w-[100%] h-[100%]"
-          /> */}
-        </span>
+        />
         <span className="bg-[#ffffff] w-[53%]  h-[100%]">
           <div className="block  w-[100%] mx-auto  h-[70%] px-5 pt-5">
             {/* <div className="flex  w-fit items-center mx-auto text-center "> */}

@@ -6,6 +6,7 @@ import { combineReducers } from "redux";
 import classOfCategory from "./classOfCategory";
 import productsClassReducers from "./productsClassReducers";
 import userReducer from "./userReducer";
+import companyReducer from "./companyReducer";
 
 const allReducers = combineReducers({
   products: productsReducers,
@@ -16,6 +17,7 @@ const allReducers = combineReducers({
   classesOfCategory: classOfCategory,
   productsOfClass: productsClassReducers,
   users: userReducer,
+  companies: companyReducer,
 });
 
 export default allReducers;

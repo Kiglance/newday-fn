@@ -10,7 +10,6 @@ import ShopHeader from "../../components/ShopHeader/ShopHeader";
 import "./Shop.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import img1 from "../../assets/shard.jpeg";
 
 const Shop = (props) => {
   const { allProductsOfClass } = props;

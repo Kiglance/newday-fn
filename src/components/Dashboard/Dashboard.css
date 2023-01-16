@@ -25,6 +25,9 @@
   box-sizing: border-box;
   padding: 5px;
 }
+.sides::-webkit-scrollbar{
+  display:none
+}
 .nooooo {
   width: 100%;
   height: fit-content;
@@ -77,6 +80,9 @@
   overflow: hidden;
   opacity: 1;
   transition: all 0.5s ease;
+}
+.classes .div::-webkit-scrollbar{
+  display:none
 }
 .classes .div * {
   transition: all 0.5s ease;

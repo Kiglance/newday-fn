@@ -210,7 +210,7 @@ const Users = (props) => {
           <div
             style={{
               display: "flex",
-              overflowX: "scroll",
+              overflowX: "hidden",
               maxWidth: "170px",
               alignItems: "center",
             }}
@@ -242,7 +242,7 @@ const Users = (props) => {
         const phone = row.original.Profile?.phoneNumber;
         return (
           <div
-            style={{ display: "block", overflowX: "scroll", maxWidth: "170px" }}
+            style={{ display: "block", overflowX: "hidden", maxWidth: "170px" }}
           >
             <p
               style={{
@@ -263,7 +263,7 @@ const Users = (props) => {
         const gender = row.original.Profile?.gender;
         return (
           <div
-            style={{ display: "block", overflowX: "scroll", maxWidth: "80px" }}
+            style={{ display: "block", overflowX: "hidden", maxWidth: "80px" }}
           >
             <p className="">{gender || "--"}</p>
           </div>
@@ -277,7 +277,7 @@ const Users = (props) => {
         const department = row.original.Profile?.department;
         return (
           <div
-            style={{ display: "block", overflowX: "scroll", maxWidth: "170px" }}
+            style={{ display: "block", overflowX: "hidden", maxWidth: "170px" }}
           >
             <p className="">{department || "--"}</p>
           </div>
@@ -291,7 +291,7 @@ const Users = (props) => {
         const bd = row.original.Profile?.birthDate;
         return (
           <div
-            style={{ display: "block", overflowX: "scroll", maxWidth: "150px" }}
+            style={{ display: "block", overflowX: "hidden", maxWidth: "150px" }}
           >
             <p style={{ color: "#626567" }}>{convertTime(bd) || "--"}</p>
           </div>
@@ -450,7 +450,7 @@ const Users = (props) => {
             margin: "auto",
             overflow: "auto",
             paddingBottom: "0px",
-            overflowX: "auto",
+            overflowX: "hidden",
           }}
           className="bg-[#f7f9ff]"
         >
@@ -824,7 +824,7 @@ const Users = (props) => {
             margin: "0 auto",
             width: "100%",
             bottom: "0",
-            overflowX: "auto",
+            overflowX: "hidden",
           }}
         >
           <div>

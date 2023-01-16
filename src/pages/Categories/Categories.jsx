@@ -53,6 +53,10 @@ const Categories = (props) => {
   const availableClasses = allClasses.body;
   const availableProducts = allProducts.body;
 
+  const new_arrayTitle = availableProducts?.map((x, idx) => {
+    return x.images[0];
+  });
+
   const saveCategory = () => {
     const send = {
       categoryName,
@@ -343,13 +347,14 @@ const Categories = (props) => {
                   }}
                 >
                   <img
-                    src={arrayTitle[idx]}
+                    src={new_arrayTitle[idx]}
                     alt=""
                     style={{
-                      width: "40px",
-                      height: "55px",
+                      width: "50px",
+                      height: "50px",
                       margin: "0 10px",
                     }}
+                    className="object-cover"
                   />{" "}
                   {values.productName}
                 </MenuItem>
