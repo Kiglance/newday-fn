@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/newday-frontend/static/css/main.ac290776.css",
+    "main.js": "/newday-frontend/static/js/main.95a6c38b.js",
+    "static/media/back-1.jpg": "/newday-frontend/static/media/back-1.bdff38434b7deb29b651.jpg",
+    "static/media/back-2.jpg": "/newday-frontend/static/media/back-2.b31684f35a3899455d51.jpg",
+    "static/media/pdts.jpg": "/newday-frontend/static/media/pdts.b8ba9e5d959492e3144d.jpg",
+    "static/media/tip1.webp": "/newday-frontend/static/media/tip1.ac4838c63e09a4343e84.webp",
+    "static/media/tip4.png": "/newday-frontend/static/media/tip4.a2fd347175d0c1da5fe8.png",
+    "static/media/tip2.jpg": "/newday-frontend/static/media/tip2.bff096757a24289b5c7b.jpg",
+    "static/media/vim3.jpg": "/newday-frontend/static/media/vim3.f20ea869612bd3e3df91.jpg",
+    "static/media/svg2.jpg": "/newday-frontend/static/media/svg2.ebc78550766afdde81e0.jpg",
+    "static/media/tip3.webp": "/newday-frontend/static/media/tip3.832119bdea8bc7b25ca0.webp",
+    "static/media/svg1.png": "/newday-frontend/static/media/svg1.6fd439c06d43aed7aa38.png",
+    "static/media/vim1.png": "/newday-frontend/static/media/vim1.9df4db686160c2b21c91.png",
+    "static/media/vim4.png": "/newday-frontend/static/media/vim4.939d7b3ff60e833e192f.png",
+    "static/media/logo.jpg": "/newday-frontend/static/media/logo.06d604366805bbd39189.jpg",
+    "static/media/svg3.jpg": "/newday-frontend/static/media/svg3.b5c2c994807926f1581e.jpg",
+    "index.html": "/newday-frontend/index.html",
+    "main.ac290776.css.map": "/newday-frontend/static/css/main.ac290776.css.map",
+    "main.95a6c38b.js.map": "/newday-frontend/static/js/main.95a6c38b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac290776.css",
+    "static/js/main.95a6c38b.js"
+  ]
+}
