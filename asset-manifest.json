@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/newday-frontend/static/css/main.ac290776.css",
-    "main.js": "/newday-frontend/static/js/main.95a6c38b.js",
+    "main.css": "/newday-frontend/static/css/main.dc4a857c.css",
+    "main.js": "/newday-frontend/static/js/main.cce578d3.js",
     "static/media/back-1.jpg": "/newday-frontend/static/media/back-1.bdff38434b7deb29b651.jpg",
     "static/media/back-2.jpg": "/newday-frontend/static/media/back-2.b31684f35a3899455d51.jpg",
     "static/media/pdts.jpg": "/newday-frontend/static/media/pdts.b8ba9e5d959492e3144d.jpg",
@@ -17,11 +17,11 @@
     "static/media/logo.jpg": "/newday-frontend/static/media/logo.06d604366805bbd39189.jpg",
     "static/media/svg3.jpg": "/newday-frontend/static/media/svg3.b5c2c994807926f1581e.jpg",
     "index.html": "/newday-frontend/index.html",
-    "main.ac290776.css.map": "/newday-frontend/static/css/main.ac290776.css.map",
-    "main.95a6c38b.js.map": "/newday-frontend/static/js/main.95a6c38b.js.map"
+    "main.dc4a857c.css.map": "/newday-frontend/static/css/main.dc4a857c.css.map",
+    "main.cce578d3.js.map": "/newday-frontend/static/js/main.cce578d3.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac290776.css",
-    "static/js/main.95a6c38b.js"
+    "static/css/main.dc4a857c.css",
+    "static/js/main.cce578d3.js"
   ]
 }
