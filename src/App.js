@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Shopping from "./pages/Shopping/Shopping";
 import Header from "./components/Headers/Header";
 import Shop from "./pages/shop/Shop";
+import ClassShop from "./pages/shop/ClassShop.jsx";
 import ShopOne from "./pages/shop/ShopOne";
 import OneCategory from "./pages/shop/OneCategory";
 import OneClasses from "./pages/shop/OneClasses";
@@ -23,6 +24,7 @@ function App() {
       <Route path="/start_shopping/" element={<Shopping />} exact={true} />
       <Route path="/dev/" element={<Header />} exact={true} />
       <Route path="/companies/:id/" element={<Shop />} exact={true} />
+      <Route path="/companies/:id/:id" element={<ClassShop />} exact={true} />
       <Route path="/product/:id/" element={<ShopOne />} exact={true} />
       <Route path="/category/:id/" element={<OneCategory />} exact={true} />
       <Route path="/login/" element={<Login />} exact={true} />
