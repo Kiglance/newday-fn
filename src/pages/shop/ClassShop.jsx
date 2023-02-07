@@ -233,7 +233,7 @@ const Shop = (props) => {
               </div>
 
               <div className="flex  w-fit items-center mx-auto text-center mt-1">
-                <button className="border flex items-center px-3 py-2 rounded-[5px]  bg-[#E52424] hover:bg-[#e52424d3] text-white">
+                <button className="border flex items-center px-3 py-2 rounded-[5px]  bg-[#0c6c61] hover:bg-[#0c6c61d3] text-white">
                   <FaIcons.FaShoppingCart className="mr-2" /> Add to cart
                 </button>
               </div>

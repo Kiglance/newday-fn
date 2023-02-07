@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
 import Home from "./pages/Home/Home";
 import Shopping from "./pages/Shopping/Shopping";
 import Header from "./components/Headers/Header";

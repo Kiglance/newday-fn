@@ -101,19 +101,19 @@ const Companies = (props) => {
         </div>
       </div>
       <div className="flex items-center pl-[10%] my-5">
-        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#e52424d3] rounded-[5px] mr-3">
+        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#0c6c61d3] rounded-[5px] mr-3">
           Shoes
         </button>
-        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#e52424d3] rounded-[5px] mr-3">
+        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#0c6c61d3] rounded-[5px] mr-3">
           Phones
         </button>
-        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#e52424d3] rounded-[5px] mr-3">
+        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#0c6c61d3] rounded-[5px] mr-3">
           Computers
         </button>
-        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#e52424d3] rounded-[5px] mr-3">
+        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#0c6c61d3] rounded-[5px] mr-3">
           Clothes
         </button>
-        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#e52424d3] rounded-[5px] mr-3">
+        <button className="py-[2px] px-3 border-[1px] font-bold bg-[#e3e2e2] text-black hover:bg-[#0c6c61d3] rounded-[5px] mr-3">
           Books
         </button>
       </div>
@@ -155,7 +155,7 @@ const Companies = (props) => {
                     <BsIcons.BsStar />
                   </h3>
                 </div>
-                <button className="bg-[#E52424] w-auto block hover:bg-[#e52424d3] text-white font-bold  py-[4px] px-10 rounded-[3px] mx-auto">
+                <button className="bg-[#0c6c61] w-auto block hover:bg-[#0c6c61d3] text-white font-bold  py-[4px] px-10 rounded-[3px] mx-auto">
                   Visit
                 </button>
               </div>

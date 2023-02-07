@@ -38,7 +38,7 @@ const Home = (props) => {
       <Header />
       <div className="w-[60%] lg:w-[90%] md:w-[90%] mx-auto">
         <section>
-          <h1 className="font-bold text-[20px] w-[30%]  semi-md:w-[60%] md:w-[90%]   py-10 text-[#E52424]">
+          <h1 className="font-bold text-[20px] w-[30%]  semi-md:w-[60%] md:w-[90%]   py-10 text-[#0c6c61]">
             How to do online business and make your business grow with NewDay
             platform.
           </h1>
@@ -49,13 +49,13 @@ const Home = (props) => {
           />
           <button
             onClick={toCompanies()}
-            className="bg-[#E52424] hover:bg-[#e52424d3] text-white font-bold my-5 py-[4px] px-2 rounded-[3px]"
+            className="bg-[#0c6c61] hover:bg-[#e52424d3] text-white font-bold my-5 py-[4px] px-2 rounded-[3px]"
           >
             Explore sales companies
           </button>
         </section>
         <section>
-          <h1 className="font-bold text-[20px] pt-10 pb-5 text-[#E52424]">
+          <h1 className="font-bold text-[20px] pt-10 pb-5 text-[#0c6c61]">
             What we do:
           </h1>
           <ul className="list-disc pl-5">
@@ -75,7 +75,7 @@ const Home = (props) => {
           </ul>
         </section>
         <section>
-          <h1 className="font-bold text-[20px] pt-10 pb-5 text-[#E52424]">
+          <h1 className="font-bold text-[20px] pt-10 pb-5 text-[#0c6c61]">
             Why use NewDay?
           </h1>
           <div className="image-over">
@@ -87,7 +87,7 @@ const Home = (props) => {
                 New Day for Business has resources to help you plan, start,
                 grow, and advertise your small business
               </p>
-              <button className="bg-[#E52424] hover:bg-[#E52424] text-white font-bold my-5 py-[2px] px-2 rounded-[3px]">
+              <button className="bg-[#0c6c61] hover:bg-[#0c6c61] text-white font-bold my-5 py-[2px] px-2 rounded-[3px]">
                 Register your firm
               </button>
             </div>
@@ -105,7 +105,9 @@ const Home = (props) => {
               alt=""
               className="w-[100%] aspect-video object-cover rounded-[10px]"
             />
-            <h1 className="font-bold text-[20px] pt-5 pb-1">2000+ people</h1>
+            <h1 className="font-bold text-[20px] pt-5 pb-1">
+              100+ web searches
+            </h1>
             <p>
               visit New day each month to find restaurants, home services, and
               more1
@@ -133,7 +135,9 @@ const Home = (props) => {
               alt=""
               className="w-[100%] aspect-video object-cover rounded-[10px]"
             />
-            <h1 className="font-bold text-[20px] pt-5 pb-1">2000+ people</h1>
+            <h1 className="font-bold text-[20px] pt-5 pb-1">
+              Advertise on web.
+            </h1>
             <p>
               visit New day each month to find restaurants, home services, and
               more1
@@ -146,7 +150,7 @@ const Home = (props) => {
               className="w-[100%] aspect-video object-cover rounded-[10px]"
             />
             <h1 className="font-bold text-[20px] pt-5 pb-1">
-              100% data security.
+              Account management.
             </h1>
             <p>
               visit New day each month to find restaurants, home services, and
@@ -155,7 +159,7 @@ const Home = (props) => {
           </div>
         </section>
         <section>
-          <h1 className="font-bold text-[20px] pt-10 pb-5 w-[60%] sm:w-[100%] text-[#E52424]">
+          <h1 className="font-bold text-[20px] pt-10 pb-5 w-[60%] sm:w-[100%] text-[#0c6c61]">
             NewDay makes it easy to connect with new customers and grow your
             business
           </h1>
@@ -167,7 +171,7 @@ const Home = (props) => {
               className="w-[50%] sm:w-[100%] aspect-video object-cover rounded-[10px] border-[1px] border-slate-200"
             />
             <div className="w-[50%] sm:w-[100%] px-10 md:px-2">
-              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#E52424]">
+              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#0c6c61]">
                 WEB PAGE
               </h1>
               <h2 className="font-bold text-[20px] pt-0 pb-1">
@@ -186,7 +190,7 @@ const Home = (props) => {
               className="w-[50%] sm:w-[100%] aspect-video object-cover rounded-[10px] border-[1px] border-slate-200"
             />
             <div className="w-[50%] sm:w-[100%] px-10 md:px-2">
-              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#E52424]">
+              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#0c6c61]">
                 WEB ADS
               </h1>
               <h2 className="font-bold text-[20px] pt-0 pb-1">
@@ -205,7 +209,7 @@ const Home = (props) => {
               className="w-[50%] sm:w-[100%] aspect-video object-cover rounded-[10px] border-[1px] border-slate-200"
             />
             <div className="w-[50%] sm:w-[100%] px-10 md:px-2">
-              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#E52424]">
+              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#0c6c61]">
                 CONNECT
               </h1>
               <h2 className="font-bold text-[20px] pt-0 pb-1">
@@ -224,7 +228,7 @@ const Home = (props) => {
               className="w-[50%] sm:w-[100%] aspect-video object-cover rounded-[10px] border-[1px] border-slate-200"
             />
             <div className="w-[50%] sm:w-[100%] px-10 md:px-2">
-              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#E52424]">
+              <h1 className="font-bold text-[20px] pt-1 pb-2 text-[#0c6c61]">
                 PAYMENT SAFETY
               </h1>
               <h2 className="font-bold text-[20px] pt-0 pb-1">
@@ -238,7 +242,7 @@ const Home = (props) => {
           </section>
         </section>
         <section className="w-[100%] aspect-video pb-10 mb-10 bg-[#F1EEEE] rounded-[10px]">
-          <h1 className="font-bold text-[20px] w-[30%] md:w-[70%]  pt-7 text-[#E52424] text-center mx-auto">
+          <h1 className="font-bold text-[20px] w-[30%] md:w-[70%]  pt-7 text-[#0c6c61] text-center mx-auto">
             Get our expert online business advice.
           </h1>
           <p className="underline text-center">Tips to start with NewDay</p>
@@ -259,7 +263,7 @@ const Home = (props) => {
                   Apart from your interests, you will also need to gain some
                   insight on which sector you can leverage with your knowledge.
                 </p>
-                <p className="font-bold pt-2 text-[#E52424] ">Read article</p>
+                <p className="font-bold pt-2 text-[#0c6c61] ">Read article</p>
               </div>
             </div>
             <div className="flex sm:block mx-auto items-start w-[50%] semi-sm:w-[100%]">
@@ -278,7 +282,7 @@ const Home = (props) => {
                   Apart from your interests, you will also need to gain some
                   insight on which sector you can leverage with your knowledge.
                 </p>
-                <p className="font-bold pt-2 text-[#E52424] ">Read article</p>
+                <p className="font-bold pt-2 text-[#0c6c61] ">Read article</p>
               </div>
             </div>
           </div>
@@ -299,7 +303,7 @@ const Home = (props) => {
                   Apart from your interests, you will also need to gain some
                   insight on which sector you can leverage with your knowledge.
                 </p>
-                <p className="font-bold pt-2 text-[#E52424] ">Read article</p>
+                <p className="font-bold pt-2 text-[#0c6c61] ">Read article</p>
               </div>
             </div>
             <div className="flex sm:block mx-auto items-start w-[50%] semi-sm:w-[100%]">
@@ -318,7 +322,7 @@ const Home = (props) => {
                   Apart from your interests, you will also need to gain some
                   insight on which sector you can leverage with your knowledge.
                 </p>
-                <p className="font-bold pt-2 text-[#E52424] ">Read article</p>
+                <p className="font-bold pt-2 text-[#0c6c61] ">Read article</p>
               </div>
             </div>
           </div>

@@ -22,3 +22,5 @@ export const ASSIGN_PRODUCT = "ASSIGN_PRODUCT";
 export const CREATE_CLASS = "CREATE_CLASS";
 export const DELETE_USER = "DELETE_USER";
 export const UPDATE_USER_PROFILE = "UPDATE_USER_PROFILE";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";

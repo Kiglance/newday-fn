@@ -10,7 +10,7 @@ import companyReducer from "./companyReducer";
 
 const allReducers = combineReducers({
   products: productsReducers,
-  oneProduct: productsReducers,
+  // oneProduct: productsReducers,
   categories: categoryReducers,
   oneProduct: oneProductReducer,
   classes: classReducers,
